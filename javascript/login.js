@@ -2,6 +2,8 @@
 let usuarioLogin = document.getElementById('usuarioLogin')
 let senhaLogin = document.getElementById('senhaLogin')
 
+usuarioLogin.focus()
+
 document.getElementById('formularioLogin').addEventListener('submit', (e)=>{
     e.preventDefault()
 
@@ -19,6 +21,7 @@ document.getElementById('formularioLogin').addEventListener('submit', (e)=>{
         }
         if(iguais){
             window.location.href = 'http://127.0.0.1:5500/Projetos%20para%20github%20em%20andamento/site%20cadastro%20e%20login%20usuario/index.html'
+            usuarioLogin.value = ''
         } else {
             alert('Usuário Ou Senha Incorretos.')
         }

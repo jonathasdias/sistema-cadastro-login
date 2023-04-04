@@ -5,6 +5,8 @@ let senhaCadastro = document.getElementById('senhaCadastro')
 let checkTermos = document.getElementById('checkTermos')
 let cadastros = []
 
+emailElement.focus()
+
 function cadastrarUsuario() {
     cadastros.push(
         {
@@ -24,6 +26,10 @@ document.getElementById('formularioCadastro').addEventListener('submit', (e)=>{
 
     if(cadastros.length < 1){
         cadastrarUsuario()
+        emailElement.value = ''
+        usuarioCadastro.value = ''
+        senhaCadastro.value = ''
+        emailElement.focus()
         console.log(cadastros);
     }else if(cadastros.length >= 1){
         let novoUsuario = usuarioCadastro.value
@@ -38,9 +44,15 @@ document.getElementById('formularioCadastro').addEventListener('submit', (e)=>{
         if(jaExiste){
             alert('Usuário Já Existente. Crie outro nome de usuário')
             console.log('crie outro usuário.');
+            usuarioCadastro.value = ''
+            usuarioCadastro.focus()
         }else {
-            cadastrarUsuario()
+            cadastrarUsuario();
             console.log('novo usuário criado.');
+            emailElement.value = ''
+            usuarioCadastro.value = ''
+            senhaCadastro.value = ''
+            emailElement.focus()
         }
         
     }

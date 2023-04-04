@@ -9,26 +9,28 @@
 </head>
 <body>
     <form id="formularioCadastro">
+        <h1 class="tituloCadastro">Cadastre-Se</h1>
+
         <div>
             <label for="email">Email:</label>
-            <input type="email" id="email" required>
+            <input type="email" id="email" minlength="12" maxlength="30" placeholder="Digite Seu Email" required>
         </div>
 
         <div>
             <label for="nomeCadastro">Nome:</label>
-            <input type="text" id="nomeCadastro" required>
+            <input type="text" id="nomeCadastro" placeholder="Digite Seu Nome" minlength="2" maxlength="30" required>
         </div>
 
         <div>
             <label for="senhaCadastro">Senha:</label>
-            <input type="password" id="senhaCadastro" required>
+            <input type="password" id="senhaCadastro" minlength="6" maxlength="30" placeholder="Crie Uma Senha" required>
         </div>
 
-        <p>
+        <p class="termos">
             <input type="checkbox" id="checkTermos" required> Concorda com os <a href="#">Termos de uso</a>.
         </p>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" class="btnEnviarCadastro">
     </form>
 
     <script src="./javascript/cadastro.js"></script>
